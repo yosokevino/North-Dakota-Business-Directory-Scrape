@@ -68,6 +68,7 @@ custom_settings_2 = {
 process_1 = CrawlerProcess(custom_settings_1)
 process_2 = CrawlerProcess(custom_settings_2)
 
+# Uses inlineCallbacks to make sure the first level company data is pulled before the detail pull is started. Uses yield to ensure the sequence is followed.
 @defer.inlineCallbacks
 def crawl():
     """Crawler function that populates predefined dictionaries with crawl output"""
